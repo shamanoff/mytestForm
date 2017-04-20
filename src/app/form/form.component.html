@@ -1,0 +1,35 @@
+<div class="row align-center ">
+
+  <form (ngSubmit)="onSubmit(myform); myform.reset()" #myform="ngForm">
+    <div class="form-icons">
+      <h4>Register for an account</h4>
+
+      <div class="input-group form-group">
+      <span class="input-group-label">
+        <i class="fa fa-user"></i>
+      </span>
+        <input class="input-group-field form-control" type="text" placeholder="Full name" id="name" required
+                [(ngModel)]="user.name" name="name">
+      </div>
+
+      <div class="input-group form-group">
+      <span class="input-group-label">
+        <i class="fa fa-envelope"></i>
+      </span>
+        <input class="input-group-field form-control" type="text" placeholder="Email" id="email" required
+                [(ngModel)]="user.email" name="email">
+      </div>
+
+      <div class="input-group form-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+        <input class="input-group-field form-control" type="text" placeholder="Password" id="password" required
+               [(ngModel)]="user.password" name="password">
+      </div>
+    </div>
+
+    <button class="button expanded" type="submit">Sign Up</button>
+  </form>
+
+</div>
