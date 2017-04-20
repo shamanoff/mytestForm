@@ -1,3 +1,4 @@
+///<reference path="../user/user.component.ts"/>
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {UserComponent} from '../user/user.component';
@@ -6,8 +7,11 @@ import {UserComponent} from '../user/user.component';
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
+  providers: []
 })
 export class FormComponent implements OnInit {
+
+  private users: UserComponent[] =[];
 
   user = {
     name: '',
@@ -17,8 +21,12 @@ export class FormComponent implements OnInit {
   submited = false;
 
   onSubmit(form: NgForm) {
+
+    let newUser: UserComponent = new UserComponent(this.user.name, this.user.email, this.user.password);
+    this.users.push(newUser);
     this.submited = true;
-    console.log(this.user);
+    console.log(this.users.map(obj => JSON.stringify(obj)));
+
   }
 
   constructor() {
