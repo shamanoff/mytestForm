@@ -6,7 +6,11 @@ import {UserComponent} from '../user/user.component';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
+  styles: [`
+     .ng-dirty .ng-invalid {
+      border: 1px solid red;
+    }
+  `],
   providers: []
 })
 export class FormComponent implements OnInit {

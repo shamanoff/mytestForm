@@ -16,8 +16,10 @@
       <span class="input-group-label">
         <i class="fa fa-envelope"></i>
       </span>
-        <input class="input-group-field form-control" type="text" placeholder="Email" id="email" required
-                [(ngModel)]="user.email" name="email">
+        <input class="input-group-field form-control" type="email" placeholder="Email" id="email"
+                [(ngModel)]="user.email" name="email"
+               required
+               email>
       </div>
 
       <div class="input-group form-group">
@@ -29,7 +31,8 @@
       </div>
     </div>
 
-    <button class="button expanded" type="submit">Sign Up</button>
+    <button class="button expanded" type="submit" [disabled]="!myform.valid">Sign Up</button>
+    <p>Form State: {{ myform.valid ? 'VALID' : 'INVALID' }}</p>
   </form>
 
 </div>
